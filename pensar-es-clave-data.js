@@ -4,11 +4,11 @@ var treeData = [
     "parent": "null",
     "children": [
       {
-            "name": "Temporada 1"
+            "name": "Septiembre"
             ,"_children": [
                {  
-                "name":   "Mentes Brillantes 1 - Pablo Valenzuela",
-                 "url": "https://www.youtube.com/v/ZmzUksziaCg"
+                "name":   "viernes 1 - Fabrizio Copano",
+                 "url": "https://www.youtube.com/v/kDlTMDMYo-U"
               }
              ,{  
                 "name":   "Mentes Brillantes 1 - Ricardo Baeza",
