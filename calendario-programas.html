@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- http://bl.ocks.org/KathyZ/c2d4694c953419e0509b -->
-<!-- ajustes en fila 144  -->
+<!-- ajustes en fila 151  -->
 <meta charset="utf-8">
 <html>
   <head>
@@ -141,14 +141,14 @@
       rect.filter(function(d) { return d in data; })
           .attr("class", function(d) { return "day " + color(data[d]); })
         .select("title")
-          .text(function(d) { return d + ": " + d.URL; });
+          .text(function(d) { return d + ": " + percent(data[d]); });
       //  Tooltip
       rect.on("mouseover", mouseover);
       rect.on("mouseout", mouseout);
       function mouseover(d) {
         tooltip.style("visibility", "visible");
         var percent_data = (data[d] !== undefined) ? percent(data[d]) : percent(0);
-        var purchase_text = d + ": " + percent_data;
+        var purchase_text = d + ": " + d.URL;
         tooltip.transition()        
                     .duration(200)      
                     .style("opacity", .9);      
