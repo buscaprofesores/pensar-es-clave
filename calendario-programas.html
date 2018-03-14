@@ -149,7 +149,7 @@
       function mouseover(d) {
         tooltip.style("visibility", "visible");
         var percent_data = (data[d] !== undefined) ? percent(data[d]) : percent(0);
-        var entrevistado = d.URL ;
+        var entrevistado = (data[d.URL]) ;
         var purchase_text = d + ": " + entrevistado + ", " + percent_data;
         tooltip.transition()        
                     .duration(200)      
