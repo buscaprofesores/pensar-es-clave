@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- http://bl.ocks.org/KathyZ/c2d4694c953419e0509b -->
-<!-- ajustes en fila 151,152  -->
+<!-- ajustes en fila 152,153  -->
 
 <meta charset="utf-8">
 <html>
@@ -149,7 +149,7 @@
       function mouseover(d) {
         tooltip.style("visibility", "visible");
         var percent_data = (data[d] !== undefined) ? percent(data[d]) : percent(0);
-        var entrevistado = "www.google.com";
+        var entrevistado = d[0].URL;
         var purchase_text = d + ": " + entrevistado + ", " + percent_data;
         tooltip.transition()        
                     .duration(200)      
