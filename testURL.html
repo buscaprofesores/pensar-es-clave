@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <!-- http://bl.ocks.org/KathyZ/c2d4694c953419e0509b + ajustes CC  -->
+<!-- usar https en las llamadas -->
+
 <meta charset="utf-8">
 <html>
   <head>
     <style>
-
       body {
         font: 1.1em sans-serif;
       }
-
       #chart{
         width: 800px;
         margin: 0 auto;
@@ -16,20 +16,16 @@
       .background {
         fill: #eee;
       }
-
       line {
         stroke: #fff;
       }
-
       text.active {
         fill: red;
       }
-
       .day {
         fill: #fff;
         stroke: #ccc;
       }
-
       .month {
         fill: none;
         stroke: #fff;
@@ -38,7 +34,6 @@
       .year-title {
         font-size: 1.5em;
       }
-
       /* color ranges */
       .RdYlGn .q0-11{fill:rgb(165,0,38)}
       .RdYlGn .q1-11{fill:rgb(215,48,39)}
@@ -51,17 +46,16 @@
       .RdYlGn .q8-11{fill:rgb(102,189,99)}
       .RdYlGn .q9-11{fill:rgb(26,152,80)}
       .RdYlGn .q10-11{fill:rgb(0,104,55)}
-
       /* hover info */
       #tooltip {
         background-color: #fff;
         border: 2px solid #ccc;
         padding: 10px;
       }
-
     </style>
   </head>
-    <body>
+
+<body>
 
       <div id="chart" class="clearfix"></div>
 
@@ -71,10 +65,8 @@
     var width = 960,
         height = 750,
         cellSize = 25; // cell size
-
     var no_months_in_a_row = Math.floor(width / (cellSize * 7 + 50));
     var shift_up = cellSize * 3;
-
     var day = d3.time.format("%w"), // day of the week
         day_of_month = d3.time.format("%e") // day of the month
         day_of_year = d3.time.format("%j")
@@ -83,11 +75,9 @@
         year = d3.time.format("%Y"),
         percent = d3.format(".1%"),
         format = d3.time.format("%Y-%m-%d");
-
     var color = d3.scale.quantize()
         .domain([-.05, .05])
         .range(d3.range(11).map(function(d) { return "q" + d + "-11"; }));
-
     var svg = d3.select("#chart").selectAll("svg")
         .data(d3.range(2017, 2018))
       .enter().append("svg")
@@ -95,7 +85,6 @@
         .attr("height", height)
         .attr("class", "RdYlGn")
       .append("g")
-
     var rect = svg.selectAll(".day")
         .data(function(d) { 
           return d3.time.days(new Date(d, 0, 1), new Date(d + 1, 0, 1));
@@ -114,7 +103,6 @@
           return (week_diff*cellSize) + row_level*cellSize*8 - cellSize/2 - shift_up;
         })
         .datum(format);
-
     var month_titles = svg.selectAll(".month-title")  // Jan, Feb, Mar and the whatnot
           .data(function(d) { 
             return d3.time.months(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
@@ -131,7 +119,6 @@
           })
           .attr("class", "month-title")
           .attr("d", monthTitle);
-
     var year_titles = svg.selectAll(".year-title")  // Jan, Feb, Mar and the whatnot
           .data(function(d) { 
             return d3.time.years(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
@@ -141,8 +128,6 @@
           .attr("y", function(d, i) { return cellSize*5.5 - shift_up; })
           .attr("class", "year-title")
           .attr("d", yearTitle);
-
-
     //  Tooltip Object
     var tooltip = d3.select("body")
       .append("div").attr("id", "tooltip")
