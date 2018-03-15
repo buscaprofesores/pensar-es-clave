@@ -139,7 +139,7 @@
     d3.csv("calendario-programas.csv", function(error, csv) {
       var data = d3.nest()
         .key(function(d) { return d.Date; })
-        .rollup(function(d) { return {"entrevistado": d[0].Entrevistado, "valor": (d[0].Close - d[0].Open) / d[0].Open}; })
+        .rollup(function(d) { return {"invitado": d[0].Entrevistado, "valor": (d[0].Close - d[0].Open) / d[0].Open}; })
         .map(csv);
       rect.filter(function(d) { return d in data; })
           .attr("class", function(d) { return "day " + color(data[d].valor); })
@@ -152,8 +152,8 @@
       function mouseover(d) {
         tooltip.style("visibility", "visible");
         var percent_data = (data[d] !== undefined) ? percent(data[d].valor) : percent(0);
-        var entrevistado = data[d].Entrevistado ;
-        var purchase_text = d + ": " + "visita de " + entrevistado;
+        var nombre = (data[d] !== undefined)? data[d].invitado : 0;
+        var purchase_text = d + ": " + "visita de " + nombre ;
         
         tooltip.transition()        
                     .duration(200)      
