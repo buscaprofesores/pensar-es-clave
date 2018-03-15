@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- http://bl.ocks.org/KathyZ/c2d4694c953419e0509b -->
-<!-- ajustes en fila 152,153  -->
+<!-- ajustes en fila 152,153  USAR https en llamadas-->
 
 <meta charset="utf-8">
 <html>
@@ -54,7 +54,8 @@
       }
     </style>
   </head>
-    <body>
+
+ <body>
 
       <div id="chart" class="clearfix"></div>
 
@@ -134,6 +135,7 @@
       .style("z-index", "10")
       .style("visibility", "hidden")
       .text("a simple tooltip");
+    
     d3.csv("calendario-programas.csv", function(error, csv) {
       var data = d3.nest()
         .key(function(d) { return d.Date; })
@@ -149,8 +151,8 @@
       function mouseover(d) {
         tooltip.style("visibility", "visible");
         var percent_data = (data[d] !== undefined) ? percent(data[d]) : percent(0);
-        var entrevistado = (data[d.URL]) ;
-        var purchase_text = d + ": " + entrevistado + ", " + percent_data;
+
+        var purchase_text = d + ": " + "visita de:" + entrevistado ;
         tooltip.transition()        
                     .duration(200)      
                     .style("opacity", .9);      
