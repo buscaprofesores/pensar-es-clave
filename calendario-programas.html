@@ -152,7 +152,7 @@
       function mouseover(d) {
         tooltip.style("visibility", "visible");
         var percent_data = (data[d] !== undefined) ? percent(data[d].valor) : percent(0);
-        var entrevistado = (data[d] !== undefined)? data[d].Entrevistado : 0;
+        var entrevistado = data[d].Entrevistado ;
         var purchase_text = d + ": " + "visita de " + entrevistado;
         
         tooltip.transition()        
