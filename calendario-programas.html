@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- http://bl.ocks.org/KathyZ/c2d4694c953419e0509b -->
-<!-- ajustes en fila 152,153  USAR https en llamadas-->
+<!-- ajustes en fila 142, 152,153, 156  USAR https en llamadas-->
 
 <meta charset="utf-8">
 <html>
@@ -139,20 +139,22 @@
     d3.csv("calendario-programas.csv", function(error, csv) {
       var data = d3.nest()
         .key(function(d) { return d.Date; })
-        .rollup(function(d) { return (d[0].Close - d[0].Open) / d[0].Open; })
+        .rollup(function(d) { return {"entrevistado": d[0].Entrevistado, "valor": (d[0].Close - d[0].Open) / d[0].Open}; })
         .map(csv);
       rect.filter(function(d) { return d in data; })
-          .attr("class", function(d) { return "day " + color(data[d]); })
+          .attr("class", function(d) { return "day " + color(data[d].valor); })
         .select("title")
-          .text(function(d) { return d + ": " + percent(data[d]); });
+          .text(function(d) { return d + ": " + percent(data[d].valor); });
+      
       //  Tooltip
       rect.on("mouseover", mouseover);
       rect.on("mouseout", mouseout);
       function mouseover(d) {
         tooltip.style("visibility", "visible");
-        var percent_data = (data[d] !== undefined) ? percent(data[d]) : percent(0);
+        var percent_data = (data[d] !== undefined) ? percent(data[d].valor) : percent(0);
 
-        var purchase_text = d + ": " + "visita de " ;
+        var purchase_text = d + ": " + "visita de " + entrevistado ;
+        
         tooltip.transition()        
                     .duration(200)      
                     .style("opacity", .9);      
