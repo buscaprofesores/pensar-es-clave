@@ -1,6 +1,6 @@
 var treeData = [
   {
-    "name": "Pensar es Clave 2018, Federico Sánchez",
+    "name": "Pensar es Clave 2018",
     "parent": "null",
     "children": [
       {"name": "Julio",
