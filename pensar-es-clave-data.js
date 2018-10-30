@@ -3,25 +3,21 @@ var treeData = [
     "name": "Pensar es Clave 2018, Federico Sánchez",
     "parent": "null",
     "children": [
-      {     "name": "Julio",
-            "_children": [
-             { "name":   "jueves 20 - Joe Vascncellos",   "url": "https://www.youtube.com/v/jKKM-KMyQvo"      },      
-             { "name":    "Mentes Brillantes 1 - Ramón Latorre"  ,"url":   "https://www.youtube.com/v/voogNkB14gM"    }
-           ]
-      },
-      {     "name": "Septiembre",
-            "_children": [
-             { "name":   "viernes 1 - Fabrizio Copano",   "url": "https://www.youtube.com/v/kDlTMDMYo-U"      },      
-             { "name":    "Mentes Brillantes 1 - Ramón Latorre"  ,"url":   "https://www.youtube.com/v/voogNkB14gM"    }
-           ]
-      },
-    {       "name": "Octubre",
-            "_children": [
-             { "name":   "Mentes Brillantes 2 - Jorge Allende",        "url": "https://www.youtube.com/v/joXU0YgKu4Q"  },
-             {"name":    "Mentes Brillantes 2 - Ricardo Uauy"     ,"url":   "https://www.youtube.com/v/oNgIp0ifo0s"     }
-            ]
-     }
-  
+      {"name": "Julio",
+"_children": [
+{"name": "2018-7-1 - XXjulioA", "url": "https://www.youtube.com/v/jKKM-KMyQvo"},
+{"name": "2018-7-2 - XXjulioB", "url": "https://www.youtube.com/v/jKKM-KMyQvo"}
+]},
+{"name": "Agosto",
+"_children": [
+{"name": "2018-8-3 - Joe Vasconcellos", "url": "https://www.youtube.com/v/jKKM-KMyQvo"},
+{"name": "2018-8-4 - XXagostoA", "url": "https://www.youtube.com/v/jKKM-KMyQvo"}
+]},
+{"name": "Septiembre",
+"_children": [
+{"name": "2018-9-3 - Francisco Molina", "url": "https://www.youtube.com/v/jKKM-KMyQvo"},
+{"name": "2018-9-4 - XXseptiembreA", "url": "https://www.youtube.com/v/jKKM-KMyQvo"}
+]}
     ]
   }
 ];
